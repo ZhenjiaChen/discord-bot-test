@@ -16,7 +16,7 @@ function isHaiku(message) {
     let mark1 = false;
     let mark2 = false;
     let mark3 = false;
-    let message = message.split(/[ ]+/); 
+    message = message.split(/[ ]+/); 
     if (message.length > 17) {
         return false;
     } else {
