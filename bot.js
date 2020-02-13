@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const syllables = requre('./syllables.json');
+const syllables = require('./syllables.json');
 
 function getSyllables(word) {
     try {
