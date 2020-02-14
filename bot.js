@@ -95,6 +95,23 @@ function makeHaiku(haiku) {
     return line1 + "\n" + line2 + "\n" + line3;
 }
 
+function sendRequest(callback) {
+    let url = "https://api.groupme.com/v3/bots/post";
+    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            callback(request.responseText);
+        }
+    }
+    request.open("POST", url, true);
+    request.send(JSON.stringify({
+        "bot_id": process.env.BOT_ID,
+        "text": "reeeeeeeeee"
+    }));
+}
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -106,6 +123,9 @@ client.on('message', message => {
     }
 
     if (message.content === '!ping') {
+        sendRequest((res) => {
+            console.log(response);
+        });
         message.reply('pong');
     } else if (isHaiku(message.content)) {
         console.log("haiku found");

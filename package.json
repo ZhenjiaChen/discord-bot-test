@@ -1,23 +1,14 @@
 {
-    "name": "Example",
-  
-    "description": "Example",
-  
-    "version": "0.0.0",
-  
-    "main": "bot.js",
-  
-    "scripts": {
-  
-      "start": "node bot.js"
-  
-    },
-  
-    "dependencies": {
-  
-      "discord.js": "11.1.0",
-  
-      "request": "2.81.0"
-  
-    }
+  "name": "discord-bot",
+  "description": "discord haiku bot",
+  "version": "0.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "request": "2.81.0",
+    "xmlhttprequest": "^1.8.0"
+  }
 }
